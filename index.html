@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Skoltech Student Dashboard</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fb;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+    header {
+      background: #003366;
+      color: #fff;
+      padding: 2rem 1rem 1rem 1rem;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+    }
+    header h1 {
+      margin: 0 0 0.5rem 0;
+      font-size: 2.2rem;
+      letter-spacing: 1px;
+    }
+    header p {
+      margin: 0;
+      font-size: 1.1rem;
+      opacity: 0.85;
+    }
+    main {
+      max-width: 1100px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    section {
+      margin-bottom: 2.5rem;
+    }
+    h2 {
+      color: #003366;
+      margin-bottom: 1rem;
+      font-size: 1.4rem;
+      border-left: 4px solid #0055a5;
+      padding-left: 0.7rem;
+    }
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1.2rem 1rem 1rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      transition: box-shadow 0.2s;
+    }
+    .card:hover {
+      box-shadow: 0 4px 16px rgba(0,85,165,0.13);
+    }
+    .card-title {
+      font-weight: 600;
+      font-size: 1.1rem;
+      margin-bottom: 0.3rem;
+      color: #0055a5;
+    }
+    .card-desc {
+      font-size: 0.98rem;
+      margin-bottom: 0.7rem;
+      color: #444;
+      opacity: 0.85;
+    }
+    .card-remark {
+      font-size: 0.92rem;
+      color: #888;
+      margin-bottom: 0.5rem;
+    }
+    .card-btn {
+      margin-top: auto;
+      background: #0055a5;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      padding: 0.5rem 1.1rem;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.18s;
+      text-decoration: none;
+      display: inline-block;
+    }
+    .card-btn:hover {
+      background: #003366;
+    }
+    .email-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+    .email-card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+      padding: 1rem 1rem 0.7rem 1rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .email-title {
+      font-weight: 600;
+      color: #0055a5;
+      margin-bottom: 0.2rem;
+    }
+    .email-address {
+      font-family: monospace;
+      color: #003366;
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .email-desc {
+      font-size: 0.95rem;
+      color: #666;
+      opacity: 0.85;
+    }
+    @media (max-width: 600px) {
+      header h1 { font-size: 1.3rem; }
+      main { padding: 0 0.2rem; }
+      .card, .email-card { padding: 0.8rem 0.6rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Skoltech Student Dashboard</h1>
+    <p>Quick access to university resources, platforms, and contacts</p>
+  </header>
+  <main>
+    <section>
+      <h2>Educational Links</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">LMS</div>
+          <div class="card-desc">Canvas Learning Management System</div>
+          <div class="card-remark">No VPN required</div>
+          <a class="card-btn" href="https://lms.skoltech.ru/login/canvas" target="_blank">Open LMS</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Course Catalog</div>
+          <div class="card-desc">Browse all courses (select term tab)</div>
+          <a class="card-btn" href="https://new.skoltech.ru/en/course-catalog/?tabs=tab7" target="_blank">Open Catalog</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Schedule of Classes</div>
+          <div class="card-desc">View your class schedule</div>
+          <div class="card-remark">No VPN required</div>
+          <a class="card-btn" href="https://schedule.skoltech.ru/?term=2024-2025-term4&date=2025-04-03&view=course&filter=2024-2025-term4_DA060492" target="_blank">Open Schedule</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Skoltech Outlook</div>
+          <div class="card-desc">Access your Skoltech email</div>
+          <div class="card-remark">Turn off Cisco</div>
+          <a class="card-btn" href="https://mail.skoltech.ru" target="_blank">Open Mail</a>
+        </div>
+        <div class="card">
+          <div class="card-title">DS Confluence</div>
+          <div class="card-desc">Data Science Confluence for research advisor finding</div>
+          <a class="card-btn" href="https://cdise.skoltech.ru/confluence/#all-updates" target="_blank">Open Confluence</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Admissions Data</div>
+          <div class="card-desc">Student admissions portal</div>
+          <div class="card-remark">No VPN required</div>
+          <a class="card-btn" href="https://student.skoltech.ru/" target="_blank">Open Admissions</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Curriculum Reference (MSc)</h2>
+      <div class="card-grid">
+        <div class="card"><div class="card-title">Advanced Manufacturing Technologies</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-amt-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Data Science</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/ds-curriculum-2024-2026-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Photonics & Quantum Materials</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculummscpqm2024-1.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Digital Electrical Energy</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-plan-es-2024-cohort.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Applied Computational Mechanics</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-acs-cohort-2024e-signed-1.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Life Sciences</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-ls-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Engineering System</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-es-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">AI Robotics</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-iotwt-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Petroleum Engineering</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-pe-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Math & Theoretical Physics</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-mtp-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Applied Photonics & Optical Info Systems</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/newmsc-curriculum-phoe-cohort-2025-apois313829v2.pdf" target="_blank">View PDF</a></div>
+        <div class="card"><div class="card-title">Applied Computational Mechanics</div><a class="card-btn" href="https://back.skoltech.ru/storage/app/media/EDUCATION/Curriculum%20msc/curriculum-msc-acm-2024-e-signed.pdf" target="_blank">View PDF</a></div>
+      </div>
+    </section>
+    <section>
+      <h2>Social Media</h2>
+      <div class="card-grid">
+        <div class="card"><div class="card-title">LinkedIn</div><a class="card-btn" href="https://www.linkedin.com/school/skolkovo-institute-of-science-and-technology/posts/?feedView=all" target="_blank">Open LinkedIn</a></div>
+        <div class="card"><div class="card-title">X (Twitter)</div><a class="card-btn" href="https://twitter.com/Skoltech" target="_blank">Open X</a></div>
+        <div class="card"><div class="card-title">VK</div><a class="card-btn" href="https://vk.com/skoltech" target="_blank">Open VK</a></div>
+        <div class="card"><div class="card-title">Telegram</div><a class="card-btn" href="https://t.me/skoltech_en" target="_blank">Open Telegram</a></div>
+        <div class="card"><div class="card-title">Yandex Music (Radio Skoltech)</div><a class="card-btn" href="https://music.yandex.ru/album/22926832" target="_blank">Open Yandex Music</a></div>
+      </div>
+    </section>
+    <section>
+      <h2>Helpdesk</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">Helpdesk Main</div>
+          <div class="card-desc">Access with Skoltech email & password. <br>Only from Skoltech network or VPN.</div>
+          <a class="card-btn" href="https://helpdesk.skoltech.ru/servicedesk/customer/user/login?destination=portals" target="_blank">Open Helpdesk</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Helpdesk Details</div>
+          <a class="card-btn" href="https://sendsay.ru/archive/1gOQ0QsPyHz0NGUJeRNRMViRp5x35ngjBngutBjwp486zDsvyuinqmfzNJCyq_5j2JJMB56I?ik=2sxp9U1rM5lK4_Qzx7elsCHyNQj-91-tAryrGC0Mv482rJe9KW7S2XfTpNAP5-vyFDKfqNobekcLOKTjiuPu4RmjRFfu1n2ekMT3LYA0" target="_blank">View Details</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Cisco AnyConnect</div>
+          <div class="card-desc">VPN to access Skoltech network from outside</div>
+          <a class="card-btn" href="https://box.skoltech.ru/index.php/s/YGqN1ochjv1j3GD" target="_blank">VPN Instructions</a>
+        </div>
+      </div>
+      <div style="margin-top:1rem; color:#b00; font-size:0.98rem; line-height: 1.5;">
+        ❗ Helpdesk services can only be accessed within the Skoltech network and Skoltech Wi-Fi (not Skoltech Guest Wi-Fi).<br>
+        To use Helpdesk from outside, please use VPN (follow instructions for Cisco AnyConnect above).
+      </div>
+    </section>
+    <section>
+      <h2>Clubs & Student Council</h2>
+      <div class="card-grid">
+        <div class="card">
+          <div class="card-title">All Clubs (Telegram)</div>
+          <a class="card-btn" href="https://t.me/SKStudentCouncil/1070" target="_blank">View Clubs</a>
+        </div>
+        <div class="card">
+          <div class="card-title">Student Council (Telegram)</div>
+          <a class="card-btn" href="https://t.me/SKStudentCouncil" target="_blank">Student Council</a>
+        </div>
+      </div>
+    </section>
+    <section>
+      <h2>Important Emails</h2>
+      <div class="email-list">
+        <div class="email-card"><div class="email-title">Campus Security</div><a class="email-address" href="mailto:S.Campus@skoltech.ru">S.Campus@skoltech.ru</a></div>
+        <div class="email-card"><div class="email-title">Student Department</div><a class="email-address" href="mailto:studept@skoltech.ru">studept@skoltech.ru</a></div>
+        <div class="email-card"><div class="email-title">LMS Email Notification</div><a class="email-address" href="mailto:lms@skoltech.ru">lms@skoltech.ru</a></div>
+        <div class="email-card"><div class="email-title">Education (course add/drop)</div><a class="email-address" href="mailto:Education@skoltech.ru">Education@skoltech.ru</a><div class="email-desc">For education, adding, dropping courses outside of timeframe</div></div>
+        <div class="email-card"><div class="email-title">Helpdesk</div><a class="email-address" href="mailto:helpdesk@skoltech.ru">helpdesk@skoltech.ru</a></div>
+        <div class="email-card"><div class="email-title">Migration Docs</div><a class="email-address" href="mailto:migrationDOCS@skoltech.ru">migrationDOCS@skoltech.ru</a><div class="email-desc">For sending migration and residence document</div></div>
+        <div class="email-card"><div class="email-title">Migration</div><a class="email-address" href="mailto:migration@skoltech.ru">migration@skoltech.ru</a><div class="email-desc">For sending migration and residence document</div></div>
+      </div>
+    </section>
+  </main>
+</body>
+</html> 
